@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="calendar">
+<head>
+  <script src="./node_modules/calendrical/src/calendrical.js"></script>
+  <script src="./bundle.js"></script>
+  <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+  <div ng-controller="CalendarController as vm">
+     <table>
+      <caption>{{vm.today.format("MMMM")}} {{vm.today.year()}}</caption>
+      <tr>
+          <td>SUN</td>
+          <td>MON</td>
+          <td>TUE</td>
+          <td>WED</td>
+          <td>THU</td>
+          <td>FRI</td>
+          <td>SAT</td>
+      </tr>
+      <tr ng-repeat="week in vm.calendar">
+        <td ng-repeat="day in week track by $index">
+          <span ng-class="{ 'leading-day': day.leadingDay || day.trailingDay }">{{day.dayOfMonth}}</span>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+body {
+  background: peachpuff;
+}
+
+tr {
+  height: 40px;
+}
+
+td {
+  width: 50px;
+  text-align: center;
+}
+
+.leading-day {
+  color: #777;
+}
